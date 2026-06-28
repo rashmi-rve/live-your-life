@@ -124,6 +124,8 @@ templates/
   server. Running `python app.py` directly (outside Docker) still uses
   Flask's built-in server, which is fine for local development.
 
-**##Author**
- Rashmi
+## Author
+```
+Rashmi
+
 
