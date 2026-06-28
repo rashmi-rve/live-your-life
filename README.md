@@ -51,40 +51,6 @@ The app container (`Dockerfile`) runs as a non-root user behind
 won't be marked ready — and the app won't start — until MySQL actually
 accepts connections.
 
-## Run it manually (no Docker)
-
-#### 1. Set up MySQL
-
-```bash
-mysql -u root -p < schema.sql
-```
-
-This creates a `village_journey` database with two tables:
-
-- `house_entries` — session_id, house_size (1–5), visitor_name, created_at
-- `award_entries` — session_id, visitor_name, created_at
-
-#### 2. Configure the app
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env` with your MySQL host/user/password and a random
-`FLASK_SECRET_KEY` (used to sign the session cookie that tracks each
-visitor's journey).
-
-#### 3. Install dependencies & run
-
-```bash
-python -m venv venv
-source venv/bin/activate        # venv\Scripts\activate on Windows
-pip install -r requirements.txt
-python app.py
-```
-
-Visit **http://localhost:5000**.
-
 ## Project layout
 
 ```
