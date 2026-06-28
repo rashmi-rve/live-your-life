@@ -1,4 +1,4 @@
-# A Village Story — Two-Tier Flask + MySQL App
+# Live your life — Two-Tier Flask + MySQL App
 
 A small interactive storybook web app. **Tier 1** is Flask, serving every
 scene and two JSON endpoints. **Tier 2** is MySQL, which remembers the
@@ -123,3 +123,7 @@ templates/
 - Inside Docker the app runs under `gunicorn` instead of Flask's dev
   server. Running `python app.py` directly (outside Docker) still uses
   Flask's built-in server, which is fine for local development.
+
+# Author
+
+Rashmi
