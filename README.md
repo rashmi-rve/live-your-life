@@ -27,7 +27,7 @@ bedroom, the certificate, the cup) is hand-drawn inline SVG — no external
 image files — styled as a "papercut diorama" with a sky that shifts mood
 (day → dusk → night, or dawn for the award) as the story moves forward.
 
-## Run it with Docker (recommended)
+## Run it with Docker 
 
 This spins up both tiers — the Flask app and a MySQL container — and
 loads `schema.sql` into MySQL automatically the first time it starts.
