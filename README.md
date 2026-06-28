@@ -1,4 +1,4 @@
-# A Village Story — Two-Tier Flask + MySQL App
+# Live your life — Two-Tier Flask + MySQL App
 
 A small interactive storybook web app. **Tier 1** is Flask, serving every
 scene and two JSON endpoints. **Tier 2** is MySQL, which remembers the
