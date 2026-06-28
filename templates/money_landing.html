@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}A Hundred Crore{% endblock %}
+
+{% block body %}
+<main class="scene sky-dusk">
+  <div class="scene__sun sun-low"></div>
+  {% include "partials/hills.html" %}
+
+  <div class="scene__content">
+    <p class="eyebrow">&#8377;100 crore is sitting in front of you</p>
+    <h1 class="story-heading">What will you do with it?</h1>
+
+    <div class="circle-row" role="group" aria-label="Choose what to do with the money">
+      <a class="circle-btn circle-btn--return" href="{{ url_for('landing') }}">
+        Return the money
+      </a>
+      <a class="circle-btn circle-btn--develop" href="{{ url_for('money_award') }}">
+        I will bring development in my village and make everyone's life easy
+      </a>
+    </div>
+  </div>
+
+  <div class="caption-scroll">
+    <p>Whatever you choose, the village will remember it</p>
+  </div>
+</main>
+{% endblock %}

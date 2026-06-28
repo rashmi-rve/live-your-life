@@ -1,0 +1,35 @@
+services:
+  db:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-village_pw}
+      MYSQL_DATABASE: village_journey
+    volumes:
+      - db_data:/var/lib/mysql
+      # Runs once, only when the data volume is first created
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD:-village_pw}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY:-dev-only-secret-change-me}
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD:-village_pw}
+      DB_NAME: village_journey
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db_data:
