@@ -34,7 +34,7 @@ loads `schema.sql` into MySQL automatically the first time it starts.
 
 ```bash
 cp .env.example .env       # edit FLASK_SECRET_KEY and DB_PASSWORD
-docker compose up --build
+docker compose up --build -d
 ```
 
 Visit **http://localhost:5000**.
